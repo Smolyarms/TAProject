@@ -4,15 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BDDTestProject.PogeObjects
+namespace BDDTestProject.PageObjects
 {
-    class QuestionPage
+    class QuestionPage : HomePage
     {
-        private IWebDriver driver;
-        public QuestionPage(IWebDriver driver)
+        //private IWebDriver driver;
+        public QuestionPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            PageFactory.InitElements(driver, this);
         }
         [FindsBy(How = How.XPath, Using = "//textarea[@placeholder='Do you have any questions relating to the election that you'd like us to answer?']")]
         private IWebElement TextArea;

@@ -4,15 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BDDTestProject.PogeObjects
+namespace BDDTestProject.PageObjects
 {
-    class SearchResultPage
+    class SearchResultPage : HomePage
     {
-        private IWebDriver driver;
-        public SearchResultPage(IWebDriver driver)
+        public SearchResultPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.XPath, Using = "//ol[@class='search-results results']//li[@data-result-number='1']")]

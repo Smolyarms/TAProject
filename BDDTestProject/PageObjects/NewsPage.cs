@@ -5,26 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BDDTestProject.PogeObjects
+namespace BDDTestProject.PageObjects
 {
-    class NewsPage
+    class NewsPage : HomePage
     {
-        private IWebDriver driver;
-        //private WebDriverWait wait;
-
-        public NewsPage(IWebDriver driver)
+        public NewsPage(IWebDriver driver) : base(driver)
         {
-            this.driver = driver;
-            PageFactory.InitElements(driver, this);
         }
         [FindsBy(How = How.XPath, Using = "//div[contains(@data-entityid,'container-top-stories#')]")]
         private IList<IWebElement> TopStories;
-
-        //[FindsBy(How = How.XPath, Using = "//div[@data-entityid='container-top-stories#1']")]
-        //protected internal IWebElement TopItem;
-
-        //[FindsBy(How = How.XPath, Using = "//div[contains(@class,'gel-layout__item nw-c-top-stories__secondary')]")]
-        //protected internal IList<IWebElement> SecondaryItems;
 
         [FindsBy(How = How.ClassName, Using = "nw-c-nav__wide-morebutton nw-c-nav__wide-morebutton__closed")]
         private IWebElement BtnMore;

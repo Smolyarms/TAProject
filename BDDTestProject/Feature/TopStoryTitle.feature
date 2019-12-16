@@ -2,7 +2,7 @@
 	
 
 @mytag
-Scenario: Assert first story title
+Scenario: Compare first story title
 	Given I open BBC news page
 	And  open news page
 	When I get top title text
@@ -10,4 +10,5 @@ Scenario: Assert first story title
 
 	Examples: 
 	| result                                              |
-	| "UK government reviews terrorists' prison release"  |
+	| Protests erupt across India over citizenship law    |
+

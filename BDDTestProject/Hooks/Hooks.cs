@@ -18,8 +18,6 @@ namespace BDDTestProject
             this.driver = driver;
         }
 
-        
-
         [AfterScenario]
         public void AfterScenario()
         {

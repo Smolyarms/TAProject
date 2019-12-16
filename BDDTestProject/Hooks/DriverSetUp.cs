@@ -23,7 +23,8 @@ namespace BDDTestProject
         [BeforeScenario]
         public void BeforeScenario()
         {
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(Environment.CurrentDirectory);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
             objectContainer.RegisterInstanceAs(driver);
         }
     }
